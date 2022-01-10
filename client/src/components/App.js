@@ -10,14 +10,14 @@ import history from '../history';
 
 // const App = () => {
 //   return (
-//     <BrowserRouter forceRefresh={true} history={history}>
+//     <BrowserRouter history={history}>
 //       <div className="ui container">
 //         <div>
 //           <Header />
 //           <Routes>
 //             <Route exact path="/" element={<StreamList />} />
 //             <Route path="/streams/new" element={<StreamCreate />} />
-//             <Route path="/streams/edit" element={<StreamEdit />} />
+//             <Route path="/streams/edit/:id" element={<StreamEdit />} />
 //             <Route path="/streams/delete" element={<StreamDelete />} />
 //             <Route path="/streams/show" element={<StreamShow />} />
 //           </Routes>
@@ -36,7 +36,7 @@ const App = () => {
           <Routes>
             <Route exact path="/" element={<StreamList />} />
             <Route path="/streams/new" element={<StreamCreate />} />
-            <Route path="/streams/edit" element={<StreamEdit />} />
+            <Route path="/streams/edit/:id" element={<StreamEdit />} />
             <Route path="/streams/delete" element={<StreamDelete />} />
             <Route path="/streams/show" element={<StreamShow />} />
           </Routes>

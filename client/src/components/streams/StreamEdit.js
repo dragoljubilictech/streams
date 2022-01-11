@@ -4,14 +4,14 @@ import { useParams } from 'react-router-dom';
 import { editStream, fetchStream } from '../../actions';
 
 const StreamEdit = () => {
-  useEffect(() => {
-    fetchStream(Number(id));
-  }, []);
-
   let { id } = useParams();
 
   const selectedStream = useSelector(state => state.streams[Number(id)]);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchStream(Number(id)));
+  }, []);
 
   if (!selectedStream) {
     return <div>Loading...</div>;
@@ -36,7 +36,7 @@ const StreamEdit = () => {
           onClick={() =>
             dispatch(
               editStream(Number(id), {
-                title: selectedStream.title,
+                title: 'selectedStream.title',
                 description: selectedStream.description,
               })
             )
